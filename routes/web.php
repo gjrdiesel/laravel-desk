@@ -11,38 +11,36 @@
 |
 */
 
-
 Auth::routes();
 
-Route::get('/','HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
-Route::get('tickets',function(){
-
+Route::get('tickets', function () {
     $query = request('search');
     $filter = request('filter');
 
     $tickets = \App\Ticket::query();
 
-    if( $query ){
-        $tickets->where('subject','like',"%{$query}%");
+    if ($query) {
+        $tickets->where('subject', 'like', "%{$query}%");
     }
 
-    if( !$filter || $filter != 'archived' ){
-        $tickets->where('status','!=','archived');
+    if (!$filter || $filter != 'archived') {
+        $tickets->where('status', '!=', 'archived');
     }
 
-    if( $filter ){
+    if ($filter) {
         $tickets->whereStatus($filter);
     }
 
     return $tickets->withCount('comments')->latest()->get();
 });
 
-Route::post('tickets/{ticket}/delete',function(\App\Ticket $ticket){
+Route::post('tickets/{ticket}/delete', function (\App\Ticket $ticket) {
     $ticket->update(['status'=>'archived']);
 });
 
-Route::get('tickets/{ticket}',function(\App\Ticket $ticket){
-    return array_merge([$ticket],$ticket->comments->toArray());
+Route::get('tickets/{ticket}', function (\App\Ticket $ticket) {
+    return array_merge([$ticket], $ticket->comments->toArray());
 });
