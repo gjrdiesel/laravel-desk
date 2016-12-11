@@ -1,14 +1,12 @@
 <?php
 
-use App\Ticket;
 use App\Mailbox;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
+use App\Ticket;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ImportEmailsTest extends TestCase
 {
-//    use DatabaseMigrations;
+    //    use DatabaseMigrations;
 
     public function testHandlesAnEmptyMailbox()
     {
@@ -22,7 +20,7 @@ class ImportEmailsTest extends TestCase
     public function testSavesANewTicketWithTicketNumber()
     {
         // Send one new ticket
-        
+
         Mailbox::import();
     }
 

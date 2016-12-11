@@ -4,15 +4,14 @@ namespace App;
 
 class Mailbox
 {
-
-    static function import()
+    public static function import()
     {
-        $messages = Mailbox::getMessages();
+        $messages = self::getMessages();
 
         return new Import($messages);
     }
 
-    static function getMessages()
+    public static function getMessages()
     {
         $messages = [];
 

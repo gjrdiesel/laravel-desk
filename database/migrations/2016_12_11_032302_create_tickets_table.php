@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTicketsTable extends Migration
 {
@@ -18,14 +18,14 @@ class CreateTicketsTable extends Migration
             $table->string('subject');
             $table->string('from_mail');
             $table->string('from_name');
-            $table->enum('status',['new','waiting','closed','archived']);
+            $table->enum('status', ['new', 'waiting', 'closed', 'archived']);
             $table->longText('text');
             $table->longText('html');
             $table->longText('raw');
             $table->timestamps();
         });
 
-        DB::update("ALTER TABLE tickets AUTO_INCREMENT = 300;");
+        DB::update('ALTER TABLE tickets AUTO_INCREMENT = 300;');
     }
 
     /**

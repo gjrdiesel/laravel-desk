@@ -1,9 +1,9 @@
 <?php
 
 use App\User;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -23,11 +23,11 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        if( env('APP_ENV') != 'production' ){
+        if (env('APP_ENV') != 'production') {
             User::create([
-                'name' => 'Administrator',
-                'email' => 'admin@gmail.com',
-                'password' => bcrypt('password')
+                'name'     => 'Administrator',
+                'email'    => 'admin@gmail.com',
+                'password' => bcrypt('password'),
             ]);
         }
     }

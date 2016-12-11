@@ -4,23 +4,19 @@ namespace App;
 
 class Import
 {
-
     private $currentMessage = null;
 
     public function __construct(array $messages)
     {
-
         foreach ($messages as $message) {
-
             $this->currentMessage = $message;
 
-            if( $this->isResponseToTicket() ){
+            if ($this->isResponseToTicket()) {
                 continue;
             }
 
             Ticket::saveFromMessage($message);
         }
-
     }
 
     private function isResponseToTicket()
@@ -38,7 +34,7 @@ class Import
         $ticketId = $matches[1];
         $ticket = Ticket::find($ticketId);
 
-        if (! $ticket) {
+        if (!$ticket) {
             // Go back to just creating a new ticket
             return false;
         }

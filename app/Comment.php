@@ -17,7 +17,7 @@ class Comment extends Model
             'from_name'  => $message->from[0]->personal,
             'text'       => $message->bodies['text']->content,
             'html'       => $message->bodies['html']->content,
-            'raw'        => json_encode($message)
+            'raw'        => json_encode($message),
         ]);
     }
 }
