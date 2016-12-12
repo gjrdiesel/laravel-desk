@@ -17,6 +17,7 @@
     "vue-resource": "^1.0.3"
   },
   "dependencies": {
+    "chart.js": "^2.4.0",
     "laravel-elixir": "^6.0.0-15"
   }
 }

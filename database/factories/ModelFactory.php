@@ -22,3 +22,27 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(App\Ticket::class, function (Faker\Generator $faker) {
+    static $html;
+
+    return [
+        'from_name' => $faker->name,
+        'from_mail' => $faker->unique()->safeEmail,
+        'subject'   => $faker->sentence,
+        'html'      => $html=$faker->paragraphs(8, true),
+        'text'      => $html,
+        'raw'       => '[]',
+    ];
+});
+
+$factory->define(App\Comment::class, function (Faker\Generator $faker) {
+    return [
+        'from_name' => $faker->name,
+        'from_mail' => $faker->unique()->safeEmail,
+        'subject'   => $faker->sentence,
+        'html'      => $html=$faker->paragraphs(6, true),
+        'text'      => $html,
+        'raw'       => '[]',
+    ];
+});

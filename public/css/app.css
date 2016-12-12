@@ -8699,6 +8699,10 @@ input[type="checkbox"]:disabled:checked:after,
   color: inherit;
 }
 
+#toast-container > div {
+  opacity: 0.95 !important;
+}
+
 .mt100 {
   margin-top: 100px;
 }
@@ -8721,8 +8725,8 @@ body {
   font-size: 24px;
   -webkit-transition: width .5s;
   transition: width .5s;
-  -webkit-transition-delay: .7s;
-  transition-delay: .7s;
+  -webkit-transition-delay: .4s;
+  transition-delay: .4s;
 }
 
 .menu:hover {

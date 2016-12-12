@@ -19,6 +19,9 @@ window.tickit = {
         page: 'user-list',
         user: ''
     },
+    assigning: false,
+    writeback: false,
+    writeback_comment: false,
     tickets_page: 'ticket-list',
     ticket_filter: '',
     tickets: [],
