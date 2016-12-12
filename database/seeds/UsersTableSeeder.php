@@ -17,11 +17,10 @@ class UsersTableSeeder extends Seeder
         factory(User::class)->times(5)->create();
         factory(Ticket::class)->times(6)->create();
 
-        foreach( Ticket::all() as $ticket ){
-            foreach( factory(Comment::class)->times(rand(1,10))->make() as $key=>$comment ){
+        foreach (Ticket::all() as $ticket) {
+            foreach (factory(Comment::class)->times(rand(1, 10))->make() as $key=>$comment) {
                 $ticket->comments()->create($comment->toArray());
             }
         }
-
     }
 }
