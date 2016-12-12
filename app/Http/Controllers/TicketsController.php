@@ -6,13 +6,12 @@ use Illuminate\Http\Request;
 
 class TicketsController extends Controller
 {
-
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    function index()
+    public function index()
     {
         $query = request('search');
         $filter = request('filter');
@@ -23,7 +22,7 @@ class TicketsController extends Controller
             $tickets->where('subject', 'like', "%{$query}%");
         }
 
-        if (! $filter || $filter != 'archived') {
+        if (!$filter || $filter != 'archived') {
             $tickets->where('status', '!=', 'archived');
         }
 
@@ -34,12 +33,12 @@ class TicketsController extends Controller
         return $tickets->withCount('comments')->latest()->get();
     }
 
-    function show(\App\Ticket $ticket)
+    public function show(\App\Ticket $ticket)
     {
         return array_merge([$ticket], $ticket->comments->toArray());
     }
 
-    function delete(\App\Ticket $ticket)
+    public function delete(\App\Ticket $ticket)
     {
         $ticket->update(['status' => 'archived']);
     }

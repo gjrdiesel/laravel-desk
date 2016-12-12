@@ -16,7 +16,7 @@ Auth::routes();
 Route::get('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 
-Route::get('users','UsersController@index');
+Route::get('users', 'UsersController@index');
 
 Route::get('tickets', 'TicketsController@index');
 Route::post('tickets/{ticket}/delete', 'TicketsController@delete');

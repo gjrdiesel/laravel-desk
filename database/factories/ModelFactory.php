@@ -30,7 +30,7 @@ $factory->define(App\Ticket::class, function (Faker\Generator $faker) {
         'from_name' => $faker->name,
         'from_mail' => $faker->unique()->safeEmail,
         'subject'   => $faker->sentence,
-        'html'      => $html=$faker->paragraphs(8, true),
+        'html'      => $html = $faker->paragraphs(8, true),
         'text'      => $html,
         'raw'       => '[]',
     ];
@@ -41,7 +41,7 @@ $factory->define(App\Comment::class, function (Faker\Generator $faker) {
         'from_name' => $faker->name,
         'from_mail' => $faker->unique()->safeEmail,
         'subject'   => $faker->sentence,
-        'html'      => $html=$faker->paragraphs(6, true),
+        'html'      => $html = $faker->paragraphs(6, true),
         'text'      => $html,
         'raw'       => '[]',
     ];
