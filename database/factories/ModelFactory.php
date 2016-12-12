@@ -30,6 +30,7 @@ $factory->define(App\Ticket::class, function (Faker\Generator $faker) {
         'from_name' => $faker->name,
         'from_mail' => $faker->unique()->safeEmail,
         'subject'   => $faker->sentence,
+        'status'    => 'new',
         'html'      => $html = $faker->paragraphs(8, true),
         'text'      => $html,
         'raw'       => '[]',

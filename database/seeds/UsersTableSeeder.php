@@ -19,6 +19,9 @@ class UsersTableSeeder extends Seeder
 
         foreach (Ticket::all() as $ticket) {
             foreach (factory(Comment::class)->times(rand(1, 10))->make() as $key=>$comment) {
+                if( is_bool($comment) ){
+                    continue;
+                }
                 $ticket->comments()->create($comment->toArray());
             }
         }

@@ -11,11 +11,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+    <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
     <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet">
-    
+
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -33,13 +33,13 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script>
         toastr.options.progressBar = true;
     </script>
     @if( env('APP_ENV') == 'production' )
-        <script src="https://maxcdn.bootstrapcdn.com/bootlint/0.14.2/bootlint.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootlint/0.14.2/bootlint.min.js"></script>
     @endif
 </body>
 </html>

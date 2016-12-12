@@ -24,8 +24,8 @@ class CreateTicketsTable extends Migration
             $table->longText('raw');
             $table->timestamps();
         });
-
-        DB::update('ALTER TABLE tickets AUTO_INCREMENT = 300;');
+        
+        // DB::update('ALTER TABLE tickets AUTO_INCREMENT = 300;');
     }
 
     /**
